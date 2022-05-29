@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
 
-export default function MyButton(props) {
+export default props => {
 
     let { title, onPressFunc, style, childStyle } = props
 

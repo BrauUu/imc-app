@@ -5,7 +5,7 @@ import MyButton from '../Button/index';
 
 export default props => {
 
-    const { imc, isModalVisible, onPressFunc, modalTitle, modalButton } = props
+    const { imc, isModalVisible, onPressFunc, modalTitle, modalButton, style } = props
 
     const [imcGroup, setImcGroup] = useState()
 
@@ -33,14 +33,14 @@ export default props => {
             onShow={() => setImcInfo()}
         >
             <View style={styles.centeredModalView}>
-                <View style={[props.style.back, styles.modalView]}>
+                <View style={[style.back, styles.modalView]}>
                     <View style={styles.centeredInfo}>
                         <Title value={modalTitle}></Title>
                     </View>
-                    <Text style={[props.style.font, styles.modalViewText]}>Seu IMC é:
+                    <Text style={[style.font, styles.modalViewText]}>Seu IMC é:
                         <Text style={styles.modalViewTextResult}> {imc}</Text>
                     </Text>
-                    <Text style={[props.style.font, styles.modalViewText]}>Você pertence ao grupo:
+                    <Text style={[style.font, styles.modalViewText]}>Você pertence ao grupo:
                         <Text style={styles.modalViewTextResult}> {imcGroup}</Text>
                     </Text>
                     <View style={styles.centeredInfo}>
@@ -62,12 +62,12 @@ export default props => {
 const styles = StyleSheet.create({
     centeredModalView: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     modalView: {
         borderRadius: 20,
-        padding: 35,
+        padding: 20,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     centeredInfo: {
         alignItems: "center",
-        padding: 10
+        padding: 20
     },
     modalViewText: {
         fontSize: 18,
